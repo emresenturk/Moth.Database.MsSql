@@ -1,0 +1,14 @@
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Debug\Moth.Database.MsSql.dll
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Debug\Moth.Database.MsSql.pdb
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Debug\Moth.dll
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Debug\Moth.pdb
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\obj\Debug\Moth.Database.MsSql.csprojResolveAssemblyReference.cache
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\obj\Debug\Moth.Database.MsSql.dll
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\obj\Debug\Moth.Database.MsSql.pdb
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database\Moth.Database.MsSql\bin\Debug\Moth.Database.MsSql.dll
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database\Moth.Database.MsSql\bin\Debug\Moth.Database.MsSql.pdb
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database\Moth.Database.MsSql\bin\Debug\Moth.dll
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database\Moth.Database.MsSql\bin\Debug\Moth.pdb
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database\Moth.Database.MsSql\obj\Debug\Moth.Database.MsSql.csprojResolveAssemblyReference.cache
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database\Moth.Database.MsSql\obj\Debug\Moth.Database.MsSql.dll
+C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database\Moth.Database.MsSql\obj\Debug\Moth.Database.MsSql.pdb
