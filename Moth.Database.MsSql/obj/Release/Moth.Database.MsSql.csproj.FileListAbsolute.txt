@@ -1,7 +1,0 @@
-C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Release\Moth.Database.MsSql.dll
-C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Release\Moth.Database.MsSql.pdb
-C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Release\Moth.dll
-C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\bin\Release\Moth.pdb
-C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\obj\Release\Moth.Database.MsSql.csprojResolveAssemblyReference.cache
-C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\obj\Release\Moth.Database.MsSql.dll
-C:\Users\mesh\Documents\Visual Studio 2013\Projects\Moth\Moth.Database.MsSql\obj\Release\Moth.Database.MsSql.pdb

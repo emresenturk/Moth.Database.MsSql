@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Linq;
 using Moth.Configuration;
 using Moth.Data;
@@ -87,15 +86,7 @@ namespace Moth.Database.MsSql
 
         protected override IList<Entity> RetrieveByExpression(ExpressionQuery query)
         {
-            var queryString = query.ToSelectQuery();
-            using (var command = CreateCommand(queryString, query.Parameters.Select(p =>
-            {
-                p.Name = "@" + p.Name;
-                return p;
-            }).ToArray()))
-            {
-                return Read(command).ToList();
-            }
+            return ReadByExpression(query).ToList();
         }
 
         protected override IEnumerable<Entity> ReadByExpression(ExpressionQuery query)
@@ -103,7 +94,7 @@ namespace Moth.Database.MsSql
             var queryString = query.ToSelectQuery();
             using (var command = CreateCommand(queryString, query.Parameters.Select(p =>
             {
-                p.Name = "@" + p.Name;
+                p.Name = "@" + p.Name.TrimStart('@');
                 return p;
             }).ToArray()))
             {
@@ -211,17 +202,12 @@ namespace Moth.Database.MsSql
                         }
                         else if (partitionMethod.Type == MethodType.Skip)
                         {
-                            sqlQuery = string.Format("{0} WHERE RowId{1} > {2}", sqlQuery, query.QueryIndex,
-                                partitionMethod.Parameter.ToSqlStatement());
+                            sqlQuery = string.Format("{0} WHERE RowId{1} > {2}", sqlQuery, query.QueryIndex,  partitionMethod.Parameter.ToSqlStatement());
                         }
                     }
                 }
             }
-            Trace.WriteLine("Query:");
-            Trace.WriteLine(sqlQuery);
-            Trace.WriteLine("");
-            Trace.WriteLine("");
-            Trace.WriteLine("");
+
             return sqlQuery;
         }
 
@@ -240,7 +226,7 @@ namespace Moth.Database.MsSql
             var parameterExpression = expression as ParameterExpression;
             if (parameterExpression != null)
             {
-                return "@" + parameterExpression.Parameter.Name;
+                return "@" + parameterExpression.Parameter.Name.TrimStart('@');
             }
             var memberExpression = expression as MemberExpression;
             if (memberExpression != null)
@@ -255,7 +241,8 @@ namespace Moth.Database.MsSql
             var methodExpression = expression as MethodExpression;
             if (methodExpression != null)
             {
-                return methodExpression.MethodToSqlStatement();
+                throw new NotImplementedException();
+                //return methodExpression.MethodToSqlStatement();
             }
 
             throw new ArgumentOutOfRangeException("expression", string.Format("Expression Type: {0}", expression.GetType()));
@@ -267,46 +254,6 @@ namespace Moth.Database.MsSql
             var format = binaryExpression.Operator.ToSqlBinaryFormat();
             var right = binaryExpression.Right.ToSqlStatement();
             return string.Format(format, left, right);
-        }
-
-        private static string MethodToSqlStatement(this MethodExpression source)
-        {
-            return string.Empty;
-            switch (source.Type)
-            {
-                case MethodType.Average:
-                    break;
-                case MethodType.Count:
-                    break;
-                case MethodType.First:
-                    break;
-                case MethodType.FirstOrDefault:
-                    break;
-                case MethodType.Last:
-                    break;
-                case MethodType.LastOrDefault:
-                    break;
-                case MethodType.Max:
-                    break;
-                case MethodType.Min:
-                    break;
-                case MethodType.Single:
-                    break;
-                case MethodType.SingleOrDefault:
-                    break;
-                case MethodType.Skip:
-                    break;
-                case MethodType.SkipWhile:
-                    break;
-                case MethodType.Sum:
-                    break;
-                case MethodType.Take:
-                    break;
-                case MethodType.TakeWhile:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
         }
 
         public static string ToTableName(this Type type)
