@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataRowExtension.cs" />
+    <Compile Include="ExpressionQueryExtension.cs" />
     <Compile Include="MsSqlDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
